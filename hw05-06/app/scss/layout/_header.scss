@@ -1,0 +1,63 @@
+.header{
+    width: 100%;
+    padding: 0 2rem;
+    background-color: $bg-header-color;
+    align-self: flex-start;
+    position: relative;
+    z-index: 20;
+    
+    .logo{
+        padding: 2rem 0;
+    }
+    .nav{
+        justify-content: flex-end;
+        &__item:not(:last-child){
+            margin-right: 1.5rem;
+        }
+    }
+    .column-first{     
+        flex: 1;
+    }
+    .column-second{
+        background-color: inherit;
+        flex: 1;
+    }
+    .container{
+        justify-content: center;
+        background-color: inherit;
+      
+    }
+}
+.mobile-btn{
+    display: none;
+}
+
+
+.logo{
+    display: flex;
+
+    &__ref{
+
+        img{
+            width: 100%;
+        }
+    }
+}
+.nav{
+    display: flex;
+    height: 100%;
+
+    &__block{
+        display: flex;
+        align-items: center;
+    }
+
+    &__item{
+        list-style: none;
+    }
+    &__item-ref{
+        text-decoration: none;
+        color: #000;
+        font-size: 2.3rem;
+    }
+}

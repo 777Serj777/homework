@@ -1,0 +1,192 @@
+.main{  
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    position: relative;
+    z-index: 10;
+  
+    
+    .text{
+        text-align: center;
+        font-weight: 400;
+        
+        &:first-child{
+            margin-bottom: 1.5rem;
+        }
+    }
+    .container{
+    z-index: -2;
+     
+     
+    }
+    .aside{
+        padding-top: 2rem;
+        text-align: center;
+        
+    }
+    .title-h2{
+        
+        &::first-letter{
+            text-transform: uppercase;
+        }
+    }
+    .aside-btn{
+        display: none;
+    }
+    .column-first{
+        padding: 2rem;
+        flex: 1 1;
+        order: 2;
+    }
+    .column-second{
+        flex: 0 1 21rem;
+        background-color: rgba(224, 129, 193, 0.897); 
+    }
+    .column-therdth{
+        flex: 0 1 21rem;
+        background-color: rgba(102, 189, 230, 0.897);
+        order: 3;
+    }
+    .title-h1{
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+}
+.content{
+    height: 100%;
+    
+    &__block{
+        display: flex;
+        flex-flow: row wrap;           
+    }
+    &__item{
+        position: relative;
+        flex: 1 1 25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 30rem;
+        padding: 1rem 1.5rem;   
+        list-style: none;
+        border: .1rem solid grey;
+        border-radius: 2rem;
+        margin: 0 1rem 2rem;
+        overflow: hidden;
+
+        &::after{
+            content: "";
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            top: 0;
+            bottom: 0;
+            background-color: rgb(0, 0, 0);
+            transition: .3s ease-in; 
+            z-index: -1;   
+            opacity: 0;
+        }
+        &:hover{
+            cursor: pointer;
+            color: #fff;
+
+            .title-h2{
+                color: rgb(214, 214, 214);
+            }
+            &::after{
+                left: 0;
+                right: 0;
+                opacity: .6;
+            }
+            &::before{
+                border-color: #fff;
+            }
+        }
+
+        &::before{
+            display: block;
+            content: "";
+            width: 9rem;
+            height: 9rem;
+            background: url(../img/v2.jpg) no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+            border: 1.2rem solid rgb(148, 143, 143);
+            margin-bottom: 1.5rem;   
+            transition: .3s ease-in;    
+        }
+  
+        .title-h2{
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .btn{
+            margin-top: auto;
+            text-transform: capitalize;
+            padding: .5rem 1.5rem;
+            background-color: rgb(90, 61, 150);
+            text-decoration: none;
+            color: #fff;
+            border-radius: 1rem;
+            transition: .3s linear;
+            font-size: 1.2rem;
+            font-weight: 600;
+            
+            &:hover{
+                background-color: rgb(224, 172, 60);
+                color: rgb(90, 61, 150);
+                transform: scale(1.2);
+            }
+        }
+
+        &:nth-child(){
+            background-color: grey;
+        }
+        
+    }
+    &__text{    
+        margin-bottom: 1.5rem;
+    }
+
+    .holder{
+        display: flex;
+        flex-flow: row wrap; 
+        border: .6rem solid #000;
+        border-radius: 7rem 7rem 0 0;
+        overflow: hidden;
+
+        .item{
+            display: flex;
+            font-size: 2.5rem;
+            font-weight: 600;
+            align-items: center;
+            justify-content: center;
+            flex: 1 1 20rem;
+            padding: 3rem 0;
+
+            &:nth-of-type(1){
+                background-color: rgb(235, 124, 81);   
+                min-width: 50%; 
+            }
+            &:nth-of-type(2){
+                background-color: rgb(45, 110, 230);
+                order: 4;
+            }
+            &:nth-of-type(3){
+                background-color: rgb(140, 45, 230);
+                order: 3;
+            }
+            &:nth-of-type(4){
+                order: 5;
+                background-color: rgb(61, 189, 50);
+            }
+            &:nth-of-type(5){          
+                background-color: rgb(224, 172, 60);
+                min-width: 50%;
+              
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+blockquote{
+    color: green;
+}
+.holder a[href^="https"]{
+    color: red;
+}
+.list>li:last-of-type a{
+     color: #fff;
+     background-color: green;
+}
+.list+p{
+    font-size: 1.625rem;
+}
+.text-box{
+    display: inline-block;
+    background-color: burlywood;
+    padding: .625rem 1.250rem;
+}
+.text-box>h3:first-of-type{
+    color: pink;
+}
+#greycol{
+    color: gray;
+}
+.text-box>p:nth-last-of-type(2){
+    color: green;
+}
+.text-box>div:nth-of-type(2) p{
+    color: red;
+}
+.yellow{
+    color: yellow;
+}
+.bg-box{
+    width: 50vw;
+    height: 50vh;
+    margin: 1.250rem auto;
+    background:    
+            url(img/pole-zelen-trava-dom-derevya.jpg) no-repeat center center, 
+            url(img/grass-png-images-pictures-transparent-28.png) repeat-x bottom,
+            url(img/lamp-png-0.png) repeat-x,
+            url(img/Ёжик.png) repeat-y, 
+            url(img/58eb07b830eab15b56162788.png) repeat-y right,
+            green;
+
+    background-size: 40%, 25%, 4%, 5%, 5%;
+}

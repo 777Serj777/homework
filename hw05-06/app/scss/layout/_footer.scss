@@ -1,0 +1,15 @@
+.footer{
+  
+    background-color: rgba(129, 255, 129, 0.897);
+    
+    .column-first{
+        margin: 0 auto;
+        .text{
+            padding: .5rem 0;
+            
+            &::first-letter{
+                text-transform: uppercase;
+            }
+        }
+    }
+}

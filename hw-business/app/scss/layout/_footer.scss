@@ -1,0 +1,132 @@
+.footer{
+
+    .row{
+      
+        &__one{
+            background-color: $bg-footer;
+            padding: 9rem 0 8.6rem 0;
+        }
+        &__two{
+            background-color: $bg-copyright;
+        }
+    }
+
+    &__title{
+        font-size: 2.7rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 3.1rem;
+    }
+
+}
+
+.social{
+    display: flex;
+    min-height: 4.5rem;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+
+
+    &__item{    
+        flex: 0 1 4.5rem;
+        list-style: none;
+        &:not(:last-child){
+            margin-right: 2.4rem;
+        }
+    }
+
+    &__ref{
+        display: flex;
+        height: 100%;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: 2px solid #515151;
+        border-radius: .3rem;
+        transition: border-color .3s linear;
+
+        &:hover{
+            border-color: $hover-color;
+        }
+        svg{        
+         
+
+            &.fa-facebook-f{
+                width: 1.2rem;
+                height: 2.2rem;
+            }
+            &.fa-twitter{
+                width: 2.1rem;
+                height: 1.7rem;
+            }
+            &.fa-google-plus-g{
+                width: 2rem;
+                height: 2.2rem;
+            }
+            &.fa-linkedin-in{
+                width: 2.1rem;
+                height: 1.9rem;
+            }
+        }
+    }
+}
+
+.subscribe{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__label{
+        color: #cecece;
+        font-size: 1.4rem;
+        margin-bottom: 3.1rem;
+        text-align: center;
+    }  
+    &__mail{
+        width: 100%;
+        max-width: 68.3rem;
+        min-height: 5rem;
+        background-color: #515151;
+        border-radius: .1rem;
+        padding-left: 2.2rem;
+        border: none;
+        margin-bottom: 2.9rem;
+        color: #fff;
+        font-size: 1.4rem;
+        outline: none;
+
+        &::placeholder{
+            font-size: 1.4rem;
+            color: #cecece;
+        }
+
+        &:focus{
+            box-shadow: 0 0 0 .1rem $hover-color;
+        }
+    }
+    &__btn{
+        min-width: 14.9rem;
+        min-height: 4.9rem;
+        background-color: transparent;
+        font-size: 1.7rem;
+        font-weight: 700;
+        text-transform: capitalize;
+        color: #fff;
+        border: 2px solid #515151;
+        border-radius: .3rem;
+        transition: border-color .3s linear;
+        cursor: pointer;
+
+        &:hover{
+            border-color: $hover-color;
+        }
+    }
+}
+
+.copyright{
+    text-align: center;
+    color: #cecece;
+    padding: 2.6rem 0 2.7rem 0;
+}

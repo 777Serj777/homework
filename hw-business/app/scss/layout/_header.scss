@@ -1,0 +1,401 @@
+.header{
+
+    &__row{
+        
+        &-one{
+            background-color: $bg-color-contacts;
+            border-bottom: .1rem solid $color-border;   
+
+        }
+        &-two{
+            z-index: 2;
+            left: 0;
+            right: 0;
+        
+
+            &.static{
+                animation: static .3s linear;
+              
+                &>.container{
+                    animation: static .3s linear;
+                }
+            }
+
+            @keyframes static {
+                0%{ 
+                    color: #fff;
+                    background-color: rgba($color: $bg-row-two-fixed-color, $alpha: .9);
+                    min-height: 8rem;
+                 
+                }
+                100%{
+                    color: $primary-font-color;         
+                    background-color: rgba($color: $bg-row-two-static-color, $alpha: 1);
+                    min-height: 13rem;
+                }
+            }
+
+            &.fixed{
+                position: fixed;
+                background-color: rgba($color: $bg-row-two-fixed-color, $alpha: .9);
+                top: 0;
+                animation: nav-fixed .3s linear;
+
+                &>.container{
+                    min-height: 8rem;
+                    color: #fff;
+                    animation: nav-fixed .3s linear;
+
+                    .logo{
+                        
+                        &__text{
+                            color: inherit;
+                        }
+                    }
+                    .nav{
+                        
+                        &__ref{
+                            color: #fff;
+                        }
+                        &__item{
+                            
+                            &:hover .nav__ref{
+                                color: $hover-color;
+                            }
+                            &::before{
+                                background-color: #fff;
+                            }
+
+                        }
+
+                    }
+                }
+
+                .mobile-btn__style{
+                    span, span::before, span::after{
+                        background-color: #fff;
+                    }
+                }
+               
+            }
+        }
+
+        @keyframes nav-fixed {
+            0%{ 
+                color: $primary-font-color;         
+                background-color: rgba($color: #fff, $alpha: 1);
+                min-height: 13rem;
+            }
+            100%{
+                color: #fff;
+                background-color: rgba($color: #515151, $alpha: .9);
+                min-height: 8rem;
+            }
+        }
+    }
+  
+    .contacts{
+        display: flex;
+        justify-content: flex-end;
+      
+
+        @media (max-width: 700px) {
+            justify-content: center;
+        }
+        
+       
+    }
+  
+    .container{
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        min-height: 13rem;
+        
+        .mobile-btn{
+            position: absolute;
+            visibility: hidden;
+        }
+    }
+
+    // start-styles--burger -------------------------------------------------------
+    .mobile-btn__style{
+
+        display: none;
+        position: relative;
+        left: 2rem;
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+        
+        span, span::before, span::after{
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: .4rem; 
+            background-color: #000;   
+            transform-origin: center;
+        }
+        span{ 
+            top: 50%;
+            transform: translateY(-50%);
+         
+        }      
+        span::before{
+            content: "";
+            top: .9rem;
+            transform: rotate(0);
+        }
+        span::after{
+            content: "";
+            bottom: .9rem;
+            transform: rotate(0);
+        }
+        &.animation>span::after{            
+            animation: burger-close-bottom .3s ease-in;
+        }
+        &.animation>span::before{            
+            animation: burger-close-top .3s ease-in;
+        }   
+    }
+    
+    #anchor:checked ~ .mobile-btn__style>span{
+        transition-duration: .3s;
+        background-color: transparent;
+    }
+    #anchor:checked ~ .mobile-btn__style>span::after{
+        animation: start-bottom .3s ease-in;
+        transform: rotate(45deg);
+        bottom: 0;
+    
+    
+    }
+    #anchor:checked ~ .mobile-btn__style>span::before{
+        animation: start-top .3s ease-in;
+        transform: rotate(-45deg);
+        top: 0;
+    }
+    #anchor:checked ~ .column-second{
+        transform: translateY(0);
+        animation: open-nav .3s ease-in;
+    }
+    // end-styles--burger ---------------------------------------------------------
+
+    @keyframes burger-close-bottom {
+            
+        0%{ 
+            transform: rotate(45deg);
+            bottom: 0;
+        }
+        50%{
+            bottom: 0;
+            transform: rotate(0);
+           
+        }
+        100%{
+            bottom: .9rem;
+            transform: rotate(-0);
+        }
+    }
+
+    @keyframes burger-close-top {
+        
+        0%{ 
+            transform: rotate(-45deg);
+            top: 0;
+        }
+        50%{
+            top: 0;
+            transform: rotate(0);
+           
+        }
+        100%{
+            top: .9rem;
+            transform: rotate(0);
+        }
+    }
+
+    @keyframes start-bottom {
+    
+        0%{
+            bottom: .9rem;
+            transform: rotate(0);
+        }
+        50%{
+            bottom: 0;
+            transform: rotate(0);
+           
+        }
+        100%{
+            transform: rotate(45deg);
+        }
+    }
+    
+    @keyframes start-top {
+    
+        0%{
+           
+            transform: rotate(0);
+        }
+        50%{
+            top: 0;
+            transform: rotate(0);
+           
+        }
+        100%{
+            transform: rotate(-45deg);
+        }
+    }
+  
+}
+
+/*#################################################################################*/
+
+.contacts{
+    min-height: 4.2rem;
+    background-color: inherit;
+
+    %flex{
+        display: flex;
+        align-items: center;
+    }
+
+    &__mail {
+        @extend%flex;
+        padding: 0 1.2rem 0 2rem;
+
+        .contacts__icon{
+            width: 2rem;
+            height: 1.6rem;
+            margin-right: .8rem;
+        }
+    
+    }
+    &__phone{
+        @extend%flex;
+        padding: 0 1.9rem 0 0;
+        border-right: .1rem solid $color-border;
+
+       
+       .contacts__icon{
+            width: 1.1rem;
+            height: 1.8rem;    
+            margin-right: 1.1rem;
+        }
+    }
+    &__facebook {
+        @extend%flex;
+    
+        .contacts__icon{
+           width: 2.6rem;
+           height: 2.6rem;
+           fill: $color-facebook;
+        }
+    }
+    &__ref{
+        display: flex;
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: $second-font-color;
+       
+    }
+    &__text{
+        color: $second-font-color;
+    }
+    &__icon>svg{
+        
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.logo{
+    display: flex;
+
+    &__title{
+        min-height: 5.1rem;
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+            
+    }
+    &__img{
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__caption{
+        line-height: .75;
+        font-size: 3.8rem;
+        margin-bottom: .7rem;
+    }
+    &__text{
+        line-height: 1;
+        font-size: 1.5rem;
+        color: $second-font-color;
+    }
+
+}
+
+.nav{
+    margin: 0 3.2rem 0 auto; 
+
+    &__block{
+        display: flex;
+    }
+    &__item{
+        position: relative;
+        list-style: none;
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        font-weight: 700;
+     
+
+        &:not(:last-child){
+            padding-right: 1.7rem;
+        }
+        &:not(:first-child){
+            padding-left: 1.7rem;
+        }
+
+        &:not(:last-child)::before{
+            content: "";
+        }
+
+        &::before{  
+            position: absolute;
+            width: .5rem;
+            height: .5rem;
+            background-color: $second-font-color;
+            border-radius: 50%;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            
+        }
+        &:hover .nav__ref{
+            color: $hover-color;
+        }
+    
+      
+    }
+    &__ref{
+        text-decoration: none;
+        color: $second-font-color;
+        transition: color .3s linear;
+        white-space: nowrap;
+    }
+}
+.header-btn{
+    @extend%btn;
+    min-width: 17.1rem;
+    min-height: 3.6rem;
+    
+    &__ref{      
+        text-decoration: none;
+        color: $color-text;
+    }
+}

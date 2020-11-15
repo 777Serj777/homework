@@ -1,0 +1,29 @@
+%btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700; 
+    background-color: $bg-btn-color;
+    border-radius: .4rem;
+    transition: background-color .3s linear;
+    text-transform: capitalize; 
+    color: $color-text;
+    
+
+    &:hover{
+        background-color: $hover-color-second;
+        cursor: pointer;
+    }
+}
+
+%button{
+    @extend%btn;
+
+    font-size: 2.3rem;
+    background-color: $bg-batton-color;
+    text-transform: uppercase;
+    color: $color-text;
+    outline: none;
+    border: none;
+}

@@ -1,0 +1,32 @@
+%slick-btn{
+    display: block;  
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    border-radius: 50%;
+    border: .2rem solid #fff;
+
+}
+
+.slick-next{
+    @extend%slick-btn;
+    right: 1.5rem;
+    
+    &::before{
+        content: '\25BA';
+        color: #fff;
+        font-size: 2rem;
+        font-family:sans-serif;
+    }
+}
+ .slick-prev{
+    @extend%slick-btn;
+    left: 1.5rem;
+   
+    &::before{
+        content: '\25C4';
+        color: #fff;
+        font-size: 2rem;
+        font-family:sans-serif;
+    }
+}

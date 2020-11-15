@@ -1,0 +1,260 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: .625rem;
+    margin: 0 auto;
+}
+body{
+    font-size: 2.5rem;
+    width: inherit;
+    height: 100vh; 
+}
+main{
+    position: relative;
+    width: inherit;
+    height: inherit;
+}
+.field{
+    width: 50vw;
+    position: relative;
+    background-color: #0d5825;
+    padding: 5rem;
+
+}
+.field>blockquote{
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center; 
+    margin-bottom: 7rem; 
+}
+.field>.card__deck{  
+    position: relative;
+    display: table;
+    margin: 0 auto;
+}
+.card__deck>img{
+    position: absolute; 
+    transform-origin: left bottom;
+    width: 15rem;
+    transition:  transform .3s ease-in;
+   
+}
+.card__deck>img[alt="card01"]{
+    left: -1rem;
+    transform: rotate(-15deg);
+}
+.card__deck>img[alt="card02"]{
+    transform: rotate(-5deg);
+}
+.card__deck>img[alt="card03"]{
+    left: 3rem;
+    position: relative;
+    transform: rotate(10deg);
+}
+.card__deck>img[alt="card01"]:hover{
+    transform: rotate(-15deg) translateY(-4rem);    
+}
+.card__deck>img[alt="card02"]:hover{
+    transform: rotate(-5deg) translateY(-4rem); 
+}
+.card__deck>img[alt="card03"]:hover{
+    transform: rotate(10deg) translateY(-4rem); 
+}
+.nav{
+    height: inherit;
+    position: fixed;
+    width: 15vw;
+    overflow-x: hidden;
+    z-index: 1;
+}  
+.nav>ul::before{ 
+    display: flex;
+    content: "menu here";
+    position: absolute;
+    right: 0;
+    top: 0;  
+    bottom: 0;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .35rem;
+    writing-mode: vertical-rl;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    transition: color 1s ease-in;
+}
+.nav>ul{
+    height: inherit;
+    position: relative;
+    left: -80%;
+    padding: 3rem;
+    background-color: rgba(128, 128, 128, .8);  
+    transition: left 1s ease-in, background-color 1s ease-in; 
+}
+.nav>ul:hover::before{
+    color: transparent;    
+}  
+.nav>ul:hover{  
+    left: 0;
+    background-color: rgba(128, 128, 128,1);
+}
+.nav .nav__item::before{
+    position: absolute;
+    left: 0;
+    top: 25%;
+    content: "";
+    display: inline-block;
+    background-color: orange;
+    width: 1rem;
+    height: 1rem;
+    border: .1rem solid black;
+    transform-origin: center center;
+    transform: rotate(45deg);
+    margin-left: .5rem;
+}
+.nav .nav__item a:hover{
+    color: orange;
+}
+.nav .nav__item a{
+    color: #fff;
+    text-decoration: none;
+    transition-duration: .3s;
+}
+.nav .nav__item{
+    overflow: hidden; 
+    position: relative;
+    padding-left: 3rem;
+    text-transform: uppercase;
+    list-style: none;
+}
+.nav .nav__item:not(:last-child){
+    margin-bottom: 1.5rem;
+}
+.square::after{
+    z-index: -2;
+    position: absolute;
+    content: "";
+    left: 4rem;
+    top: 4rem;
+    width: inherit;
+    height: inherit;
+    background-color: lightgreen;
+}
+.square::before{
+    z-index: -1;
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-color: lightcoral;
+}
+.square{
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    background-color: royalblue;
+    margin: 0 auto;
+}
+.two__level{
+    width: 50vw;
+    padding: 10rem;
+}
+.last__task{
+    position: relative;
+    width: 40rem;
+    height: 40rem;
+    margin: 0 auto;  
+}
+.last__task>.box::before{
+    position: absolute;
+    content: "";
+    width: inherit;
+    height: inherit;
+    display: block;
+    background-color: black;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 25% 100%, 75% 100%, 50% 50%);
+    animation: pac-man .5s ease-in-out infinite;
+}
+.last__task>.box::after{
+    position: absolute;
+    left: 60%;
+    top: 40%;
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    background-color: black;
+    border-radius: 50%;
+}
+.last__task>.box{
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    background-color: red;
+    animation: box-move 10s linear infinite;
+    transform: rotate(0deg);
+    border-radius: 50%;
+}
+@keyframes pac-man{
+    0%{
+        clip-path: polygon(50% 50%, 25% 100%, 75% 100%, 50% 50%);  
+    }    
+    100%{
+        clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 50%);  
+    }
+}
+@keyframes box-move{
+   
+    0%{
+        top: 0;
+        left: 0;
+        background-color: red;
+        transform: rotate(0deg);
+    }
+    20%{
+        top: 30rem;
+        left: 0;
+        background-color: blue;  
+        transform: rotate(0deg);  
+    }
+    25%{
+        left: 0;
+        transform: rotate(-90deg);
+    }
+    45%{
+        top: 30rem;
+        left: 30rem;
+        background-color: green; 
+        transform: rotate(-90deg);
+    }
+    50%{
+        top: 30rem;
+        transform: rotate(-180deg);
+    }
+    70%{
+        top: 0;
+        left: 30rem;
+        background-color: yellow;
+        transform: rotate(-180deg);
+    }
+    75%{
+        left: 30rem;
+        transform: rotate(-270deg); 
+    } 
+    95%{
+        top: 0;
+        left: 0;
+        transform: rotate(-270deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+  
+
+}

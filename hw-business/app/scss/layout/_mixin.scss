@@ -1,0 +1,76 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal){
+    
+    @font-face {
+      font-family: $font-family;
+      font-weight: $weight;
+      font-style: $style;
+
+      src: url('../fonts/#{$file-path}.eot');
+      src: url('../fonts/#{$file-path}.eot?#iefix') format('embedded-opentype'),
+           url('../fonts/#{$file-path}.woff') format('woff'),
+           url('../fonts/#{$file-path}.woff2') format('woff2'),
+           url('../fonts/#{$file-path}.ttf') format('truetype'),
+   
+    }
+  }
+
+@mixin title( $font-family:null, $font-size:normal, $font-weight:normal, $color-text:normal) {
+    
+    h1,h2,h3,h4,h5,h6{
+        font-family: $font-family;
+        font-size: $font-size;
+        font-weight: $font-weight;
+        color: $color-text;
+    }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+      @content;
+  }
+}
+@mixin tablet-max {
+  @media (max-width: $tablet - 1px) {
+      @content;
+  }
+}
+@mixin  tablet-l {
+  @media (min-width: $tablet-l) {
+      @content;
+  }
+}
+@mixin  tablet-l-max {
+  @media (max-width: $tablet-l - 1px) {
+      @content;
+  }
+}
+@mixin  desktop-l {
+  @media (min-width: $desktop-l) {
+      @content;
+  }
+}
+@mixin  desktop-l-max {
+  @media (max-width: $desktop-l - 1px) {
+      @content;
+  }
+}
+@mixin  desktop {
+  @media (min-width: $desktop) {
+      @content;
+  }
+}
+@mixin  desktop-max {
+  @media (max-width: $desktop - 1px) {
+      @content;
+  }
+}
+@mixin  phone-l {
+  @media (min-width: $phone-l) {
+      @content;
+  }
+}
+@mixin  phone-l-max {
+  @media (max-width: $phone-l - 1px) {
+      @content;
+  }
+}
